@@ -52,9 +52,10 @@ function toggleAddCardModal() {
   const node = document.getElementById('add-card-modal__layer');
   const isVisible = node.classList.contains('visible');
   if (isVisible) {
-    document.getElementById('add-card-modal__layer').classList.remove('visible');
+    node.classList.remove('visible');
+    document.getElementById('add-card-modal__form').reset()
   } else {
-    document.getElementById('add-card-modal__layer').classList.add('visible');
+    node.classList.add('visible');
   }
 };
 
