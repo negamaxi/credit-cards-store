@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <center>
+      <h1>Записная книжка банковских карт</h1>
+      <button type='button' onclick='onOpenAddCardModalClick()'>
+        Добавить карту
+      </button>
+    </center>
+    <hr />
+    <div id='cards-list'></div>
+    <div id='add-card-modal__layer'>
+      <div id="add-card-modal__window">
+        <div id="add-card-modal__head">
+          <span>
+            Добавить карту
+          </span>
+          <button
+            id='add-card-modal__close'
+            onclick="onCloseAddCardModalClick()"
+          >
+            x
+          </button>
+        </div>
+        <hr />
+        <form
+          onsubmit="onCardFormSubmit(event)"
+        >
+          <p>
+            <label>Номер карточки</label>
+            <br />
+            <input
+              type='text'
+              name='number'
+              pattern='((?:4[0-9]{12}(?:[0-9]{3})?)|(?:5[1-5][0-9]{14}))'
+              oninvalid="this.setCustomValidity('Введённый номер не является номером карты Master Card / Visa.')"
+              oninput="setCustomValidity('')"
+              required
+            />
+          </p>
+          <p>
+            <label>Комментарий</label>
+            <br />
+            <textarea name='description' maxlength="1024"></textarea>
+          </p>
+          <hr />
+          <button>Cохранить карту</button> 
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script> 
+  </body>
+</html> 

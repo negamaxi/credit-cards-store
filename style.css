@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+:before,
+:after {
+  box-sizing: inherit; 
+}
+
+input, textarea {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+#add-card-modal__layer {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20,20,20,0.5);
+  padding: 1em;
+}
+
+#add-card-modal__layer.visible {
+  display: block;
+}
+
+#add-card-modal__window {
+  background-color: white;
+  padding: 1em;
+  max-width: 100%;
+  width: 30em;
+  margin: auto;
+}
+
+#add-card-modal__head {
+  display: flex;
+  align-items: center;
+}
+
+#add-card-modal__close {
+  margin-left: auto;
+}
+
+.card__number {
+  overflow-wrap: break-word;
+}
+
+.card__container {
+  border: 1px solid lightskyblue;
+  margin: 0.5em;
+  padding: 1em;
+  max-width: 100%;
+}
+
+.card__description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card__provider-logo {
+  height: 2em;
+}
